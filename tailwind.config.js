@@ -2,8 +2,15 @@
 module.exports = {
   content: ["./src/**/*.js"],
   theme: {
-    extend: {},
+    
+    extend: {
+      colors: {
+        searchBG : '#f8f8f8'
+      },
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif']
+      },
+    },
   },
   plugins: [],
-}
-
+};

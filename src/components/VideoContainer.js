@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { YOUTUBE_VIDEOS_API } from "../utils/constants";
+import { LIVE_VIDEO_LIST_API, YOUTUBE_API_KEY, YOUTUBE_VIDEOS_API } from "../utils/constants";
 import VideoCard, { AdVideoCard } from "./VideoCard";
 import { Link } from "react-router-dom";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
+  console.log(videos);
 
   useEffect(() => {
     getVideos();
   }, []);
 
   const getVideos = async () => {
-    const data = await fetch(YOUTUBE_VIDEOS_API);
+    const data = await fetch(YOUTUBE_VIDEOS_API + YOUTUBE_API_KEY);
     const json = await data.json();
     setVideos(json.items);
+    console.log(json)
   };
 
   return (
-    <div className="flex flex-wrap justify-around">
+    <div className="flex flex-wrap justify-evenly">
       {videos.map((video) => (
-          <Link key ={video.id} to={"/watch?v="+ video.id}> 
+          <Link key ={video?.id} to={"/watch?v="+ video?.id}> 
             <VideoCard  info={video} />
           </Link>
       ))}

@@ -1,0 +1,39 @@
+import React, { useEffect, useState } from "react";
+import {
+  LIVE_VIDEO_LIST_API,
+  YOUTUBE_API_KEY,
+  YOUTUBE_VIDEOS_API,
+} from "../../utils/constants";
+import VideoCard, { AdVideoCard } from "../VideoCard";
+import { Link } from "react-router-dom";
+import RecommendationList from "../RecommendationList";
+import LiveVideoCard from "../LiveVideoCard";
+
+const LiveVideosContainer = () => {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    getVideos();
+  }, []);
+
+  const getVideos = async () => {
+    const data = await fetch(LIVE_VIDEO_LIST_API + YOUTUBE_API_KEY);
+    const json = await data.json();
+    setVideos(json.items);
+  };
+
+  return (
+    <div>
+      <RecommendationList />
+      <div className="flex flex-wrap justify-around">
+        {videos.map((video) => (
+          <Link key={video.id} to={"/watchLive?v=" + video?.id?.videoId}>
+            <LiveVideoCard info={video} />
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default LiveVideosContainer;

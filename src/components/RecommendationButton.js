@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const RecommendationButton = ({name}) => {
+const   RecommendationButton = ({name}) => {
   return (
       <div>
-      <button className='px-[6px] py-1 rounded-md border bg-gray-300 m-2 text-xs whitespace-nowrap' >{name}</button>
+        <Link to={"/search?searchQuery=" + name}> 
+      <button className='px-[6px] py-1 rounded-md border bg-gray-200 m-2 text-sm whitespace-nowrap' >{name}</button>
+        </Link>
       </div>
       
     
