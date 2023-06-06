@@ -4,7 +4,7 @@ const list = ["All", "Music", "Raga Music", "Mixes", "Live", "News", "Computer P
 
 const RecommendationList = () => {
   return (
-    <div className="flex ml-4">
+    <div className="flex">
       <RecommendationButton name="All" />
       <RecommendationButton name="Gaming" />
       <RecommendationButton name="Songs" />
@@ -16,10 +16,7 @@ const RecommendationList = () => {
       <RecommendationButton name="Valentines" />
       <RecommendationButton name="Cricket" />
       <RecommendationButton name="Cooking" />
-      <RecommendationButton name="Indian Music" />
-      <RecommendationButton name="Podcasts" />
-      <RecommendationButton name="React JS" />
-      <RecommendationButton name="Trending" />
+      <RecommendationButton name="Cricket" />
     </div>
     // <div id="reccomendation-list" className='flex '>
       

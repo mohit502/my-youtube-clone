@@ -6,9 +6,9 @@ import { Outlet } from 'react-router-dom';
 
 const Body = () => {
   return (
-    <div className='flex  mt-16 '>
+    <div className='flex   '>
       <HamburgerMenu />
-      <Outlet />
+      <Outlet/>
     </div>
   )
 }
