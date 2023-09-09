@@ -20,6 +20,7 @@ const RelatedVideos = () => {
     const json = await data.json();
     const { items } = json;
     setRelatedVideo(items);
+    console.log("related videos", items)
   };
 
   useEffect(() => {

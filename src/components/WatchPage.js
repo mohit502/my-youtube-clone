@@ -29,14 +29,12 @@ const WatchPage = () => {
   // This code was meant for adding the search Feature
   // const navigate = useNavigate();
   // const searchQueryArr = useSelector((store)=> store.click.clicked)
-  
+
   // if(searchQueryArr.length > 0){
   //   navigate(`/search?searchQuery=${searchQueryArr[0]}`)
   //   dispatch(deleteQuery());
 
   // }
-
-
 
   const getVideoDetail = async () => {
     const data = await fetch(
@@ -67,7 +65,7 @@ const WatchPage = () => {
     getVideoDetail();
     getChannelDetail();
     dispatch(closeMenu());
-  }, [searchParams.get('v')]);
+  }, [searchParams.get("v")]);
 
   return (
     <div className="flex">
@@ -148,7 +146,7 @@ const WatchPage = () => {
         </div>
         <CommentsContainer />
       </div>
-      <RelatedVideos />
+      {/* <RelatedVideos /> */}
     </div>
   );
 };
